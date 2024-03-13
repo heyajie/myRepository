@@ -1,6 +1,6 @@
 # myRepository
 my repo,
-本仓库提供了 SpringBoot, mybatis知识点实战示例.
+本仓库提供了 SpringBoot 知识实战框架.
 # spring boot
 Spring 作为 Java 开发界的万能框架，曾经和 Struts2、Hibernate 框架组成 SSH，成为 Java Web 开发的三驾马车。大概在 2013 年左右，又和 Spring MVC、MyBatis 框架组成 SSM，成为新一代的 Web 开发框架全家桶，一直流行延续至今。
 
@@ -8,4 +8,4 @@ Spring 作为 Java 开发界的万能框架，曾经和 Struts2、Hibernate 框�
 
 学会 Spring Boot，可以简化使用 Spring 基础组件的难度，还是学习 Spring Cloud 微服务框架的基础，因为 Spring Cloud 的基础就是 Spring Boot。
 # 目录结构
-★ minfo: springBoot + mybatis 实例。
+★ minfo: springBoot + mybatis 结合mybatis框架数据存储方案实例。
