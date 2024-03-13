@@ -1,0 +1,6 @@
+后端解决方案
+1...nginx反向代理解决跨域
+2...服务端设置Response Header(响应头部)的Access-Control-Allow-Origin
+3...在需要跨域访问的类和方法中设置允许跨域访问（如Spring中使用@CrossOrigin注解)
+4...继承使用Spring Web的CorsFilter（适用于Spring MVC、Spring Boot)
+5...实现WebMvcConfigurer接口（适用于Spring Boot)

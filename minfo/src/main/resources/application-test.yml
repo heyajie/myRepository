@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+Spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wo
+    username: root
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    com.rosense.dao.*: debug
+
+
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#spring.datasource.druid.stat-view-servlet.enabled: false
+#spring.datasource.druid.stat-view-servlet.login-username: admin
+#spring.datasource.druid.stat-view-servlet.login-password: 123456
+#spring.datasource.druid.web-stat-filter.enabled: false
+#spring.datasource.druid.web-stat-filter.session-stat-enable: false

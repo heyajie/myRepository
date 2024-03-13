@@ -1,0 +1,95 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+#*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine
+hs_err_pid*
+# logs #
+logs
+# temp ignore
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
+*.svn
+
+# system ignore
+.DS_Store
+Thumbs.db
+Servers
+.metadata
+upload
+
+
+# ######################user's####################
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.log
+
+### IntelliJ IDEA ###
+/.idea/
+.idea/
+*.iws
+*.iml
+*.ipr
+.mvn
+mvnw*
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+## build/
+
+### VS Code ###
+.vscode/
+
+### generated files ###
+bin/
+gen/
+
+### MAC ###
+.DS_Store
+
+### Other ###
+logs/
+log
+temp/
+
+.gradle/
+
+/src/main/resources.local/application.properties
