@@ -9,3 +9,4 @@ Spring 作为 Java 开发界的万能框架，曾经和 Struts2、Hibernate 框�
 学会 Spring Boot，可以简化使用 Spring 基础组件的难度，还是学习 Spring Cloud 微服务框架的基础，因为 Spring Cloud 的基础就是 Spring Boot。
 # 目录结构
 ★ minfo: springBoot + mybatis 结合mybatis框架数据存储方案实例。
+★ pigfile: springBoot  file utils 集合。
