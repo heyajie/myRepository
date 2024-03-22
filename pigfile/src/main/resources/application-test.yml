@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+
+
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#spring.datasource.druid.stat-view-servlet.enabled: false
+#spring.datasource.druid.stat-view-servlet.login-username: admin
+#spring.datasource.druid.stat-view-servlet.login-password: 123456
+#spring.datasource.druid.web-stat-filter.enabled: false
+#spring.datasource.druid.web-stat-filter.session-stat-enable: false
