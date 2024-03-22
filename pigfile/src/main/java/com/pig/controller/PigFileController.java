@@ -25,7 +25,7 @@ public class PigFileController {
     @ResponseBody
     public void downFile(HttpServletRequest request, HttpServletResponse response) throws Exception{
         log.info("begin down file ...");
-        String localFileName = "C:\\G\\444\\citys.txt";
+        String localFileName = "C:\\G\\444\\test2.txt";
         log.info(localFileName);
         File readFile = new File(localFileName);
         FileInputStream fileInputStream = new FileInputStream(readFile);//字节流
