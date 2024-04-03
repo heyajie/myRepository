@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class TimePigUtil {
 
@@ -42,6 +43,33 @@ public class TimePigUtil {
         return sdf.format(cal.getTime());
     }
 
+
+    public static String getStartDayOneWeek(String dTime, int num) {
+        if (dTime == null)
+            return "";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        dTime = dTime.replaceAll("-","");
+        dTime = dTime.replaceAll(" ","");
+        Date parseDate = null;
+        try {
+            parseDate = sdf.parse(dTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        calendar.setTime(parseDate);
+        //start of the week
+        if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            calendar.add(Calendar.DAY_OF_YEAR,-1);
+        }
+        calendar.add(Calendar.DAY_OF_WEEK, -(calendar.get(Calendar.DAY_OF_WEEK) - num));
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return sdf.format(calendar.getTime());
+    }
 
     public static void main(String[] args) {
 
