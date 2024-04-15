@@ -5,6 +5,10 @@ import org.apache.commons.logging.LogFactory;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -30,8 +34,8 @@ public class TimePigUtil {
      * @return
      */
     public static String getPreDay(String time, int delay) {
-        time = time.replaceAll(" ", "");
-        time = time.replaceAll("-", "");
+        time = time.replaceAll("[ ]", "");
+        time = time.replaceAll("[-]", "");
         Calendar cal = Calendar.getInstance();
         Date date = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
@@ -48,8 +52,8 @@ public class TimePigUtil {
         if (dTime == null)
             return "";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        dTime = dTime.replaceAll("-","");
-        dTime = dTime.replaceAll(" ","");
+        dTime = dTime.replaceAll("[-]","");
+        dTime = dTime.replaceAll("[ ]","");
         Date parseDate = null;
         try {
             parseDate = sdf.parse(dTime);
@@ -71,8 +75,31 @@ public class TimePigUtil {
         return sdf.format(calendar.getTime());
     }
 
+
+    public static String getMondayDate() {
+        LocalDate currentDate = LocalDate.now();
+        DayOfWeek currentDayOfWeek = currentDate.getDayOfWeek();
+//        System.out.println(DayOfWeek.MONDAY.getValue()); // monday
+//        System.out.println(DayOfWeek.TUESDAY.getValue()); // tuesday
+//        System.out.println(DayOfWeek.WEDNESDAY.getValue()); // wednesday
+//        System.out.println(DayOfWeek.THURSDAY.getValue()); // thursday
+//        System.out.println(DayOfWeek.FRIDAY.getValue()); // friday
+//        System.out.println(DayOfWeek.SATURDAY.getValue()); // saturday
+//        System.out.println(DayOfWeek.SUNDAY.getValue()); // sunday
+        int daysToSubtract = currentDayOfWeek.getValue() - DayOfWeek.MONDAY.getValue();
+        if (daysToSubtract < 0) {
+            daysToSubtract += 7; // Add 7 to handle negative result
+        }
+        daysToSubtract += 7; // last week
+        daysToSubtract += 7; // two weeks ago
+        LocalDate mondayDate = currentDate.minusDays(daysToSubtract);
+        return mondayDate.toString().replace("-", ""); // Format: yyyyMMdd
+    }
+
     public static void main(String[] args) {
 
-        log.info(TimePigUtil.getTimeNow());
+        //log.info(TimePigUtil.getTimeNow());
+
+        log.info(getMondayDate());
     }
 }
