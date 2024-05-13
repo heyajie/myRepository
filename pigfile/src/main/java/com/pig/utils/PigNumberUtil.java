@@ -4,6 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.math.BigDecimal;
+import java.util.Random;
 
 public class PigNumberUtil {
 
@@ -23,5 +24,18 @@ public class PigNumberUtil {
 
         Double aDouble = PigNumberUtil.toDouble(3.1452634f);
         log.info("aDouble= " + aDouble);
+        log.info("getPhoneSms()= " + getPhoneSms());
+    }
+
+    public static String getPhoneSms(){
+        Random random = new Random();
+        int code = random.nextInt(999999) + 100000;
+        if(code >= 100*10000){
+            code = code/10;
+        }
+        if(code < 100000){
+            code = code*10;
+        }
+        return String.valueOf(code);
     }
 }
