@@ -12,6 +12,11 @@ public class PigNumberUtil {
 
     private PigNumberUtil(){}
 
+    /**
+     * change to Double,精度问题转换,
+     * @param f
+     * @return
+     */
     public static Double toDouble(Float f){
         if(f == null){
             return 0d;
@@ -37,5 +42,17 @@ public class PigNumberUtil {
             code = code*10;
         }
         return String.valueOf(code);
+    }
+
+
+    public static String trimNull(Object o,String def){
+        if(o == null){
+            return def;
+        }
+        String str = String.valueOf(o);
+        if("null".equalsIgnoreCase(str) || str.length()==0){
+            return def;
+        }
+        return str;
     }
 }
