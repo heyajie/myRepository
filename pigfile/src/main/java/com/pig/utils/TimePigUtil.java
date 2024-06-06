@@ -96,10 +96,30 @@ public class TimePigUtil {
         return mondayDate.toString().replace("-", ""); // Format: yyyyMMdd
     }
 
+    public static String getTimeArr(String day, boolean isNum){
+        StringBuilder buff = new StringBuilder("");
+        if(isNum){
+            buff.append(day);
+        }else {
+            buff.append("'").append(day).append("'");
+        }
+        for (int i = 0; i < 6; i++) {
+            String tmpDay = getPreDay(day, -i-1);
+            if(isNum){
+                buff.append(",").append(tmpDay);
+            }else {
+                buff.append(",'").append(tmpDay).append("'");
+            }
+        }
+        return buff.toString();
+    }
+
     public static void main(String[] args) {
 
         //log.info(TimePigUtil.getTimeNow());
 
         log.info(getMondayDate());
+        //
+        log.info(getTimeArr("20240606", false));
     }
 }
