@@ -55,4 +55,28 @@ public class PigNumberUtil {
         }
         return str;
     }
+
+    /**
+     *  four decimal,
+     *
+     * @param vfz
+     * @param vfm
+     * @return
+     */
+    public static String getSmall(Object vfz, Object vfm, int digit){
+        String fz = String.valueOf(vfz);
+        String fm = String.valueOf(vfm);
+        if(fm==null || "".equals(fm) || "0".equals(fm) || "null".equalsIgnoreCase(fm) ||
+                fz==null || "".equals(fz) || "0".equals(fz) || "null".equalsIgnoreCase(fz)){
+            return "0.00";
+        }else {
+            BigDecimal ffz = new BigDecimal(fz);
+            BigDecimal ffm = new BigDecimal(fm);
+            BigDecimal divide = ffz.divide(ffm, digit, BigDecimal.ROUND_HALF_UP);
+            return divide.toString();
+        }
+    }
+    public static String getSmall(Object vfz, Object vfm){
+        return getSmall(vfz, vfm, 4);
+    }
 }
