@@ -4,6 +4,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class PigNumberUtil {
@@ -78,5 +80,13 @@ public class PigNumberUtil {
     }
     public static String getSmall(Object vfz, Object vfm){
         return getSmall(vfz, vfm, 4);
+    }
+
+    // down sort 321
+    public static List<Map<String, Object>> sortMap(List<Map<String, Object>> list, String key){
+        list.sort((m1, m2) -> {
+            return Integer.valueOf(m2.get(key).toString()).compareTo(Integer.valueOf(m1.get(key).toString()));
+        });
+        return list;
     }
 }
