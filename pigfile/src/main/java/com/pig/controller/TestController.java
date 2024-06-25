@@ -18,12 +18,24 @@ public class TestController {
 
     @GetMapping("/one")
     @ResponseBody
-    private Map<String, Object> test(HttpServletRequest request, HttpServletResponse response){
+    private Map<String, Object> one(HttpServletRequest request, HttpServletResponse response){
 
         Map<String, Object> res = new HashMap<>();
         res.put("status", 200);
         res.put("success", "ok");
         res.put("data", new ArrayList<>());
+        return res;
+    }
+
+
+    @GetMapping("/two")
+    @ResponseBody
+    private Map<String, Object> two(HttpServletRequest request, HttpServletResponse response){
+
+        Map<String, Object> res = new HashMap<>();
+        res.put("status", 200);
+        res.put("success", "ok");
+        res.put("data", "three.js");
         return res;
     }
 }
