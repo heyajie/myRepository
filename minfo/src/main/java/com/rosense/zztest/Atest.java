@@ -18,7 +18,7 @@ public class Atest {
         // List<String> arr = new ArrayList<>();
 
 
-        Map<String, String> m2 = new HashMap<>();
+        Map<String, Object> m2 = new HashMap<>();
         m2.put("", "");
 
 

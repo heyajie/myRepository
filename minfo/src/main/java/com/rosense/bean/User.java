@@ -8,6 +8,9 @@ public class User {
 
     public String idid;
 
+    public String role; // role
+    public String roleName; // role name
+
     public User() {
     }
 
@@ -33,5 +36,21 @@ public class User {
 
     public void setIdid(String idid) {
         this.idid = idid;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

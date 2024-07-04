@@ -67,4 +67,16 @@ public class UserController {
         return resMap;
     }
 
+    @GetMapping("/getUserByRole")
+    @ResponseBody
+    public Map<String, Object> getUserByRole(HttpServletRequest request, HttpServletResponse response,
+                                             String paramRole){
+        System.out.println("getUserByRole...  start");
+        List<Map<String, Object>> someUserRole = userService.getUserByRole(paramRole);
+        System.out.println("getUserByRole...  end...");
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("code","200");
+        userMap.put("data", someUserRole);
+        return userMap;
+    }
 }

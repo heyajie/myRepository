@@ -11,25 +11,22 @@
 
 
     <select id="getBack" resultType="java.util.Map">
-        select distinct(id), wo_no as orderId, wo_type as orderType, wo_day as dateTime, user_city as cityAdmin,
-        user_quyu as areaAdmin, scenename, sceneId, user_pro, quyu_name, wo_day, wo_month,
-        sceneoid, abnormaltype, provinceid, cityid, districtid, network
+        select *
         from ads_zhw_wxcps_zdcj_fbadscene_m_inc
         where 1=1
-        <if test="provinceId != null">
-            and provinceid = #{provinceId}
+        <if test="pId != null">
+            and  pid = #{pId}
         </if>
-        <if test="cityId != null">
-            and cityid = #{cityId}
-        </if>
-        <if test="lastTime != null and lastTime != ''">
-            and wo_month = #{lastTime}
-        </if>
-        <if test="networkType != null and networkType != ''">
-            and network = #{networkType}
-        </if>
+        
         order by id
     </select>
 
+	<select id="getUserByRole" resultType="com.rosense.bean.User">
+        <![CDATA[
+            select  *
+            from my_user t
+            where  u_role='#{paramRole}'
+        ]]>
+    </select>
 
 </mapper>

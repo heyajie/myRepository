@@ -1,6 +1,7 @@
 package com.rosense.dao.app;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,4 +15,7 @@ public interface UserMapper {
 
 
     List<Map<String, Object>> getBack();
+
+    List<Map<String, Object>> getUserByRole(@Param("paramRole") String paramRole);
+
 }

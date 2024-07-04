@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -52,5 +53,14 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<Map<String, Object>> insertOne(User user) {
         return null;
+    }
+
+    @Override
+    public List<Map<String, Object>> getUserByRole(String paramRole) {
+        List<Map<String, Object>> userByRoleList = userMapper.getUserByRole(paramRole);
+        if(userByRoleList == null || userByRoleList.size() == 0){
+            userByRoleList = new ArrayList<>(2);
+        }
+        return userByRoleList;
     }
 }
