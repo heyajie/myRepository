@@ -30,7 +30,7 @@ public class PigFilter implements Filter {
         String url = String.valueOf(httpRequest.getRequestURL());
         log.info(url);
 
-        if(url.contains("two")){
+        if(url.contains("two22")){
             httpResponse.setCharacterEncoding("UTF-8");
             httpResponse.setContentType("application/json; charset=utf-8");
             Map<String, String> m = new HashMap<>();
