@@ -76,7 +76,22 @@ public class UserController {
         System.out.println("getUserByRole...  end...");
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("code","200");
+        if(!checkOneRole(paramRole)){
+            userMap.put("data", new ArrayList<>());
+            userMap.put("msg", "params err...");
+            return userMap;
+        }
         userMap.put("data", someUserRole);
         return userMap;
+    }
+
+    private boolean checkOneRole(String role){
+        if(role ==null){
+            return false;
+        }
+        if(role.length() >8){
+            return false;
+        }
+        return true;
     }
 }
