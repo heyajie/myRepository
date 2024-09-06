@@ -89,4 +89,14 @@ public class PigNumberUtil {
         });
         return list;
     }
+
+    public static int numCompare(Object v1, Object v2){
+        Double d1 = Double.parseDouble(String.valueOf(v1));
+        Double d2 = Double.parseDouble(String.valueOf(v2));
+        //double
+        BigDecimal big1 = new BigDecimal(String.valueOf(d1));
+        BigDecimal big2 = new BigDecimal(String.valueOf(d2));
+        // //int i = big1.compareTo(big2);
+        return big1.compareTo(big2);
+    }
 }
