@@ -38,6 +38,17 @@ public class PigIOUtil {
         PigIOUtil.closeOut(out);
     }
 
+    // if is utf8
+    public boolean codeIsUTF(InputStream in) throws IOException {
+        byte[] b = new byte[3];
+        int read = in.read(b);
+        if (read>0){
+            return b[0] == -17 && b[1] == -69 && b[2] == -65;
+        }else{
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         PigIOUtil.closeStream(null, null);
         log.info("");
