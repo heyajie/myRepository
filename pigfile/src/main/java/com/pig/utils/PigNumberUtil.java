@@ -99,4 +99,26 @@ public class PigNumberUtil {
         // //int i = big1.compareTo(big2);
         return big1.compareTo(big2);
     }
+
+    public static Integer toInt(Object obj) {
+        if (obj != null && !"".equals(obj)) {
+            try {
+                if (obj instanceof Number) {
+                    return new Integer(((Number)obj).intValue());
+                } else if (obj instanceof Boolean) {
+                    return obj.equals(Boolean.FALSE) ? new Integer(0) : new Integer(-1);
+                } else {
+                    return Integer.valueOf(obj.toString().trim());
+                }
+            } catch (Throwable var4) {
+                try {
+                    return Integer.valueOf(obj.toString().trim());
+                } catch (Throwable var3) {
+                    return null;
+                }
+            }
+        } else {
+            return null;
+        }
+    }
 }
