@@ -57,6 +57,16 @@ public class PigArrUtil {
         }
     }
 
+    public Map<String, Object> initMap(Map<String, Object> m){
+        Map<String, Object> resMap = new HashMap<>();
+        for(String key: m.keySet()){
+            resMap.put(key, m.get(key));
+            resMap.put(key+"_b", 0);
+            resMap.put(key+"_b_hb", 0);
+        }
+        return resMap;
+    }
+    
     public static void main(String[] args) {
 
     }
