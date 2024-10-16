@@ -69,6 +69,7 @@ public class PigNumberUtil {
         String fz = String.valueOf(vfz);
         String fm = String.valueOf(vfm);
         if(fm==null || "".equals(fm) || "0".equals(fm) || "null".equalsIgnoreCase(fm) ||
+                "NaN".equalsIgnoreCase(fm) ||
                 fz==null || "".equals(fz) || "0".equals(fz) || "null".equalsIgnoreCase(fz)){
             return "0.00";
         }else {

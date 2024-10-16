@@ -66,7 +66,7 @@ public class PigArrUtil {
         }
         return resMap;
     }
-    
+
     public static void main(String[] args) {
 
     }
