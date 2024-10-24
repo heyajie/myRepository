@@ -122,4 +122,23 @@ public class PigNumberUtil {
             return null;
         }
     }
+
+    // hand  NaN,
+    public static void handNumNan(Map<String, Object> b, Object defValue){
+        if(b ==null){
+            return;
+        }
+        for(String k: b.keySet()){
+            String tmp = String.valueOf(b.get(k));
+            if("NaN".equalsIgnoreCase(tmp)){
+                if(defValue ==null){
+                    b.put(k, 0);
+                }else {
+                    b.put(k, defValue);
+                }
+            }else {
+                b.put(k, b.get(k));
+            }
+        }
+    }
 }
